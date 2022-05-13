@@ -28,9 +28,5 @@ public class MainActivity2 extends AppCompatActivity {
         TextView t4=findViewById(R.id.t4);
         String s5=intent.getStringExtra(MainActivity.MSG5);
         t4.setText(s5);
-        TextView t5=findViewById(R.id.t5);
-        String s6=intent.getStringExtra(MainActivity.MSG6);
-        t5.setText(s6);
-
     }
 }

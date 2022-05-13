@@ -8,16 +8,13 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     EditText name,email,phone,note;
-    RadioGroup radioGroup;
-    RadioButton r;
     Spinner spinner;
     Button btn;
     String s1,s2,s3,s4,s5,s6;
@@ -27,17 +24,17 @@ public class MainActivity extends AppCompatActivity {
     public static final String MSG3="msg3";
     public static final String MSG4="msg4";
     public static final String MSG5="msg5";
-    public static final String MSG6="msg6";
+    private Object CheckBox;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         name=findViewById(R.id.name);
+        CheckBox=findViewById(R.id.Sexmale);
         email=findViewById(R.id.email);
         phone=findViewById(R.id.phone);
         note=findViewById(R.id.note);
-        radioGroup=findViewById(R.id.radioGroup);
-        spinner=findViewById(R.id.spinner);
         btn=findViewById(R.id.btn);
         String[]arr=getResources().getStringArray(R.array.city);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -69,13 +66,7 @@ public class MainActivity extends AppCompatActivity {
                 s4=note.getText().toString();
                 intent.putExtra("msg4",s4);
 
-                ID=radioGroup.getCheckedRadioButtonId();
-                r=findViewById(ID);
-                s5=r.getText().toString();
                 intent.putExtra("msg5",s5);
-
-
-                intent.putExtra("msg6",s6);
                 startActivity(intent);
             }
         });
